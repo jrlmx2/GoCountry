@@ -93,7 +93,7 @@ func FindByNumber(num int) *Country {
 	return nil
 }
 
-// Search searches the input string text for occurances of known countries
+// Search searches the input string text for occurrences of known countries
 func Search(options *Options, text string) []*Country {
 	contains := make([]*Country, 0)
 
