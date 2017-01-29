@@ -9,10 +9,10 @@ Given the text "Example full countries: Benin, azerbaijan. Example three letter 
 ```go
 import "github.com/jrlmx2/GoCountry"
 options := &gocountry.Options{
-  full:      true, // search full country name
-  codeTwo:   true, // search for 2 character country code
-  codeThree: true, // search for 3 character country code
-  number:    true, //search for country number. (MUST BE 0 Padded)
+  Full:      true, // search full country name
+  CodeTwo:   true, // search for 2 character country code
+  CodeThree: true, // search for 3 character country code
+  Number:    true, //search for country number. (MUST BE 0 Padded)
 }
 
 countries := gocountry.Search(options, "Example full countries: Benin, azerbaijan. Example three letter country code: BOL. Example two letter country code: BR Example number: 408")
@@ -27,7 +27,7 @@ Given the text "Example full countries: Benin, azerbaijan. Example three letter 
 
 ```go
 import "github.com/jrlmx2/GoCountry"
-countries := gocountry.Search(&gocountry.Options{full:true}, "Example full countries: Benin, azerbaijan. Example three letter country code: BOL. Example two letter country code: BR Example number: 408")
+countries := gocountry.Search(&gocountry.Options{Full:true}, "Example full countries: Benin, azerbaijan. Example three letter country code: BOL. Example two letter country code: BR Example number: 408")
 for _, country := range countries {
   fmt.Printf("Found country in text: %s, %s, %s, %s\n", country.Full(), country.CodeTwo(), country.CodeThree(), country.Number())
 }

@@ -76,10 +76,10 @@ func (c *Country) String() string {
 
 // Options toggle search functions and is required to pass into the Search function
 type Options struct {
-	full      bool
-	codeTwo   bool
-	codeThree bool
-	number    bool
+	Full      bool
+	CodeTwo   bool
+	CodeThree bool
+	Number    bool
 }
 
 // FindByNumber accepts and input int and returns the country associated or nil
@@ -98,7 +98,7 @@ func Search(options *Options, text string) []*Country {
 	contains := make([]*Country, 0)
 
 	for _, c := range countries {
-		if options.full && c.ExistsFull(strings.ToLower(text)) || options.codeTwo && c.ExistsTwo(text) || options.codeThree && c.ExistsThree(text) || options.number && c.ExistsNum(text) {
+		if options.Full && c.ExistsFull(strings.ToLower(text)) || options.CodeTwo && c.ExistsTwo(text) || options.CodeThree && c.ExistsThree(text) || options.Number && c.ExistsNum(text) {
 			contains = append(contains, c)
 		}
 	}
